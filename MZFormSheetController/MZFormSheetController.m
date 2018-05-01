@@ -50,6 +50,9 @@ CGFloat const MZFormSheetPresentedControllerDefaultCornerRadius = 6.0;
 CGFloat const MZFormSheetPresentedControllerDefaultShadowRadius = 6.0;
 CGFloat const MZFormSheetPresentedControllerDefaultShadowOpacity = 0.5;
 
+//CGFloat const MZFormSheetKeyboardMargin = 20.0;
+CGFloat const MZFormSheetKeyboardMargin = 6.0;
+
 CGFloat const MZFormSheetControllerWindowTag = 10001;
 
 static const char* MZFormSheetControllerAssociatedKey = "MZFormSheetControllerAssociatedKey";
@@ -680,6 +683,8 @@ static BOOL MZFromSheetControllerIsViewControllerBasedStatusBarAppearance(void) 
             case MZFormSheetWhenKeyboardAppearsMoveToTopInset:
               formSheetRect.origin.y = self.topInset;
               break;
+	    case MZFormSheetWhenKeyboardAppearsMoveAboveKeyboard:
+              formSheetRect.origin.y = formSheetRect.origin.y + (screenRect.size.height - CGRectGetMaxY(formSheetRect)) - MZFormSheetKeyboardMargin;
             default:
               break;
           }
