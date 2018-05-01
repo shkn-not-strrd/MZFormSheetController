@@ -1,3 +1,5 @@
+You have found a fork of MZFormSheetController! I am working on this fork to support an existing project. Main changes focus on iOS 11 UI compatibility, specifically iPhone X notch.
+
 [![](http://inspace.io/github-cover.jpg)](http://inspace.io)
 
 MZFormSheetController v3 (MZFormSheetPresentationController)
