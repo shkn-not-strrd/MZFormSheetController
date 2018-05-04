@@ -50,7 +50,10 @@ CGFloat const MZFormSheetPresentedControllerDefaultCornerRadius = 6.0;
 CGFloat const MZFormSheetPresentedControllerDefaultShadowRadius = 6.0;
 CGFloat const MZFormSheetPresentedControllerDefaultShadowOpacity = 0.5;
 
-CGFloat const MZFormSheetKeyboardMargin = 20.0;
+
+//CGFloat const MZFormSheetKeyboardMargin = 20.0;
+CGFloat const MZFormSheetKeyboardMargin = 6.0;
+
 
 CGFloat const MZFormSheetControllerWindowTag = 10001;
 
@@ -674,6 +677,7 @@ static BOOL MZFromSheetControllerIsViewControllerBasedStatusBarAppearance(void) 
     if (self.keyboardVisible && self.movementWhenKeyboardAppears != MZFormSheetWhenKeyboardAppearsDoNothing) {
         CGRect formSheetRect = self.presentedFSViewController.view.frame;
         CGRect screenRect = [self.screenFrameWhenKeyboardVisible CGRectValue];
+
         
         if (screenRect.size.height > CGRectGetHeight(formSheetRect)) {
             switch (self.movementWhenKeyboardAppears) {
@@ -691,6 +695,7 @@ static BOOL MZFromSheetControllerIsViewControllerBasedStatusBarAppearance(void) 
                 default:
                     break;
             }
+
         } else {
             formSheetRect.origin.y = self.top;
         }
