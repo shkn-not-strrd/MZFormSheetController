@@ -2,10 +2,12 @@ You have found a fork of MZFormSheetController! I am working on this fork to sup
 
 [![](http://inspace.io/github-cover.jpg)](http://inspace.io)
 
-MZFormSheetController v3 (MZFormSheetPresentationController)
+MZFormSheetController v3
 ===========
 
-### MZFormSheetPresentationController was rewritten and build on iOS 8 API. You can still use MZFormSheetController if you want to support iOS5 >, but if you have deployment target set to iOS8 i recommed you to use  MZFormSheetPresentationController. It don't use any tricky hacks to present form sheet as a UIWindow, it use native modalPresentationStyle UIModalPresentationOverFullScreen.
+### `MZFormSheetController` was rewritten and replaced by [`MZFormSheetPresentationController`](https://github.com/m1entus/MZFormSheetPresentationController) which base on new iOS 8 modal presentation API. You can still use MZFormSheetController if you want to support <iOS8, but if you have deployment target set to iOS8 `i recommed you to use  MZFormSheetPresentationController`, i have dropped support for this project in favour of MZFormSheetPresentationController. MZFormSheetPresentationController don't use any tricky hacks to present form sheet as a UIWindow, it use native modalPresentationStyle UIModalPresentationOverFullScreen, and use native `UIVisualEffect` view to make blur.
+
+## MZFormSheetPresentationController contain example project for Swift and Objective-C.
 
 MZFormSheetController
 ===========

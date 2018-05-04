@@ -1,9 +1,9 @@
 //
-//  MZFormSheetPresentationControllerAnimator.h
-//  MZFormSheetPresentationControllerAnimator
+//  MZApperance.h
+//  MZAppearance
 //
-//  Created by Michał Zaborowski on 24.02.2015.
-//  Copyright (c) 2015 Michał Zaborowski. All rights reserved.
+//  Created by Michał Zaborowski on 17.08.2013.
+//  Copyright (c) 2013 Michał Zaborowski. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,9 +25,31 @@
 
 #import <Foundation/Foundation.h>
 
-extern CGFloat const MZFormSheetPresentationControllerAnimatorDefaultTransitionDuration;
+#define MZ_APPEARANCE_SELECTOR UI_APPEARANCE_SELECTOR
 
-@interface MZFormSheetPresentationControllerAnimator : NSObject <UIViewControllerAnimatedTransitioning>
-@property (nonatomic, assign) CGFloat duration;
-@property (nonatomic, assign, getter=isPresenting) BOOL presenting;
+@protocol MZAppearance <NSObject>
+
+/** 
+ To customize the appearance of all instances of a class, send the relevant appearance modification messages to the appearance proxy for the class.
+ */
++ (instancetype)appearance;
+@end
+
+@interface MZAppearance : NSObject
+
+/** 
+ Applies the appearance of all instances to the object. 
+ */
+- (void)applyInvocationTo:(id)target;
+
+/**
+ Applies the appearance of all instances to the object starting from the superclass 
+ */
+- (void)applyInvocationRecursivelyTo:(id)target upToSuperClass:(Class)superClass;
+
+/** 
+ Returns appearance for class 
+ */
++ (id)appearanceForClass:(Class)aClass;
+
 @end
